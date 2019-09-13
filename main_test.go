@@ -23,12 +23,12 @@ func TestAddTwo(t *testing.T) {
 
 	go func(e chan error) {
 		defer close(e)
-		err := fmt.Errorf("FAIL!")
+		err := fmt.Errorf("this will succeed in failure")
 		e <- err
 	}(errChan)
 
 	err := <-errChan
 	if err != nil {
-		t.Fatalf("error came down the channel: %s", err)
+		t.Fatalf("error came down the channel: %v", err)
 	}
 }
