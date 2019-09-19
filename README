@@ -1,1 +1,1 @@
-demonstrates goroutine error swallowing in tests
+Demonstrates goroutine error swallowing in tests
